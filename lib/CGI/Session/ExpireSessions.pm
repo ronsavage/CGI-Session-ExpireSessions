@@ -646,6 +646,16 @@ See the examples/ directory in the distro.
 
 There are 2 demo programs: expire-sessions.pl and expire-set.pl.
 
+=head1 SUPPORT
+
+Bugs should be reported via the CPAN bug tracker at
+
+L<https://github.com/ronsavage/CGI-Session-ExpireSessions/issues>
+
+=head1 REPOSITORY
+
+L<https://github.com/ronsavage/CGI-Session-ExpireSessions>.
+
 =head1 Author
 
 C<CGI::Session::ExpireSessions> was written by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2004.

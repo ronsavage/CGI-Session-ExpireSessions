@@ -44,4 +44,4 @@
 ^MYMETA.yml$
 ^MYMETA\.json$
 
-^DBIx-CGI-Session-ExpireSessions-.*
+^CGI-Session-ExpireSessions-.*
