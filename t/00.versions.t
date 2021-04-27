@@ -5,7 +5,7 @@ use warnings;
 
 # I tried 'require'-ing modules but that did not work.
 
-use CGI-Session-ExpireSessions; # For the version #.
+use CGI::Session::ExpireSessions; # For the version #.
 
 use Test::More;
 
