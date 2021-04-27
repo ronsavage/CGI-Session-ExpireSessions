@@ -57,7 +57,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 
 );
-our $VERSION = '1.13';
+our $VERSION = '1.14';
 
 # -----------------------------------------------
 
@@ -152,6 +152,13 @@ sub expire_db_sessions
 
 	$sth -> execute();
 
+	my($serializer) = 'eval';
+
+	if (defined $$self{_serializer})
+	{
+		$serializer = $$self{_serializer};
+	}
+
 	my($data, $D, @id, $untainted_data);
 
 	while ($data = $sth -> fetchrow_hashref() )
@@ -160,9 +167,19 @@ sub expire_db_sessions
 
 		($untainted_data) = $$data{'a_session'} =~ /(.*)/;
 
-		eval $untainted_data;
+		if ($serializer eq 'eval')
+		{
+			eval $untainted_data;
 
-		push @id, $$data{'id'} if ($self -> _check_expiry($D) );
+			push @id, $$data{id} if ($self -> _check_expiry($D) );
+		}
+		else
+		{
+			my($serializer)	= "CGI::Session::Serialize::$serializer";
+			my($thawed)		= $serializer -> thaw($untainted_data);
+
+			push @id, $$data{id} if ($self -> _check_expiry($thawed) );
+		}
 	}
 
 	for (@id)

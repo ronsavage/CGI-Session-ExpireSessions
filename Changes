@@ -1,5 +1,11 @@
 Revision history for Perl extension CGI::Session::ExpireSessions.
 
+1.14  2021-04-27T19:10:00
+	- Adopt patch to sub expire_db_sessions() from Noam Rathaus. With thanx!
+	- Change licence from artistic_2 to perl.
+	- Update POD re repository to be on github, and submission of patches.
+	- Update Makefile.PL.
+
 1.13  2013-05-27T15:57:00
 	- Replace /usr/bin/perl with /usr/bin/env perl.
 	- Replace common::sense with use strict and use warnings, to get uninit var warnings.
@@ -59,7 +65,7 @@ Revision history for Perl extension CGI::Session::ExpireSessions.
 	- Note: All files referred to here match the CGI::Session file name format /cgisess_[0-9a-f]{32}/
 	- Fix the assumption in sub expire_file_sessions() that the program was being run in the temp directory,
 		by adding the temp directory's name as a prefix to all file names.
-		Original patch: Matthias Bl�sing
+		Original patch: Matthias Blising
 	- Fix sub expire_file_sessions() to delete files of size <= 5 bytes which are old enough. Files of size 0
 		are sometimes created by CGI::Session under unknown circumstances.
 		As always, use new(delta => 123) to change the definition of 'old enough'
