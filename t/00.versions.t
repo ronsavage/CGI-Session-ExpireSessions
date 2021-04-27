@@ -5,7 +5,7 @@ use warnings;
 
 # I tried 'require'-ing modules but that did not work.
 
-use CGI::Session::ExpireSessions; # For the version #.
+use CGI-Session-ExpireSessions; # For the version #.
 
 use Test::More;
 
@@ -19,12 +19,12 @@ pass('All external modules loaded');
 
 my(@modules) = qw
 /
-	Carp;
-	CGI::Session;
-	File::Spec;
+	Carp
+	CGI::Session
+	File::Spec
 /;
 
-diag "Testing CGI::Session::ExpireSessions V $CGI::Session::ExpireSessions::VERSION";
+diag "Testing CGI-Session-ExpireSessions V $CGI-Session-ExpireSessions::VERSION";
 
 for my $module (@modules)
 {
