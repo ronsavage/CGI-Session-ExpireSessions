@@ -24,7 +24,7 @@ my(@modules) = qw
 	File::Spec
 /;
 
-diag "Testing CGI-Session-ExpireSessions V $CGI-Session-ExpireSessions::VERSION";
+diag "Testing CGI::Session::ExpireSessions V $CGI::Session::ExpireSessions::VERSION";
 
 for my $module (@modules)
 {
