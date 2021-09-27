@@ -476,7 +476,7 @@ sophisticated way of expiring sessions, but it does require C<CGI::Session> V 4 
 
 new(...) returns a C<CGI::Session::ExpireSessions> object.
 
-This is the class's contructor.
+This is the class's constructor.
 
 Usage: CGI::Session::ExpireSessions -> new().
 
